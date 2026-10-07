@@ -1,0 +1,5 @@
+firmware/.pio/
+firmware/.vscode/
+server/.env
+server/*.db
+__pycache__/

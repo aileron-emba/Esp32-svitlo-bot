@@ -1,0 +1,14 @@
+[Unit]
+Description=Svitlo bot server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/opt/svitlo/server
+ExecStart=/usr/bin/python3 /opt/svitlo/server/svitlo_server.py
+Restart=always
+RestartSec=5
+User=svitlo
+
+[Install]
+WantedBy=multi-user.target
