@@ -40,7 +40,20 @@ python3 svitlo_server.py
 
 Перевірка: `curl http://IP_СЕРВЕРА:8080/health` → `{"ok": true}`.
 
-Автозапуск через systemd (Linux / Raspberry Pi):
+### Наш сервер: Hetzner `91.99.145.54`
+
+Прошивка вже налаштована на `http://91.99.145.54:8080`, ключ — у `firmware/include/config.h`.
+Встановлення на сервері (від root), токен бота і `API_KEY` з `config.h`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/aileron-emba/esp32-svitlo-bot/claude/light-monitor-telegram-na5t5e/server/deploy.sh -o deploy.sh
+bash deploy.sh <BOT_TOKEN> <API_KEY>
+```
+
+Оновлення коду пізніше: `bash /opt/svitlo/server/deploy.sh` (налаштування зберігаються).
+Якщо в панелі Hetzner увімкнено Cloud Firewall — дозвольте вхідний TCP 8080.
+
+### Вручну через systemd (будь-який Linux / Raspberry Pi)
 
 ```bash
 sudo useradd -r svitlo
