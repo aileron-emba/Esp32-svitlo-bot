@@ -48,7 +48,7 @@ void loadSettings() {
   prefs.begin("svitlo", true);
   cfg.ssid = prefs.getString("ssid", "");
   cfg.pass = prefs.getString("pass", "");
-  cfg.chatId = prefs.getString("chat", "");
+  cfg.chatId = prefs.getString("chat", DEFAULT_CHAT_ID);
   cfg.name = prefs.getString("name", "");
   prefs.end();
 }
